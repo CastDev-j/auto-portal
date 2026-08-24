@@ -1,0 +1,11 @@
+packages:
+  - "."
+allowBuilds:
+  esbuild: true
+  sharp: true
+  workerd: false
+minimumReleaseAgeExclude:
+  - "@astrojs/cloudflare@14.2.4"
+  - "@astrojs/markdown-satteri@0.3.8"
+  - "@types/react-dom@19.2.5"
+  - astro@7.2.6
