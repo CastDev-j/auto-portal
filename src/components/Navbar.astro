@@ -1,0 +1,38 @@
+---
+const links = [
+  { href: "/", label: "Inicio" },
+  { href: "/nosotros", label: "Nosotros" },
+  { href: "/productos", label: "Productos y Servicios" },
+  { href: "/capacidades", label: "Capacidades" },
+  { href: "/calidad", label: "Calidad y Certificaciones" },
+  { href: "/sectores", label: "Sectores y Clientes" },
+  { href: "/noticias", label: "Noticias y Proyectos" },
+  { href: "/contacto", label: "Contacto" },
+];
+---
+
+<header>
+  <nav aria-label="Navegación principal">
+    <a href="/" aria-label="Ir al inicio">
+      <img
+        src="/favicon.svg"
+        alt="Logotipo de la empresa"
+        width="48"
+        height="48"
+      />
+      <span>Proveedora Automotriz Laja-Bajío</span>
+    </a>
+
+    <ul>
+      {
+        links.map((link) => (
+          <li>
+            <a href={link.href}>{link.label}</a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <a href="/cotizacion">Solicitar Cotización</a>
+  </nav>
+</header>
