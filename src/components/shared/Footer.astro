@@ -1,12 +1,83 @@
-<section id="nosotros-resumen">
-  <h2>Sobre nosotros</h2>
-  <p>
-    Conoce nuestra trayectoria, propósito y proyección como proveedores del
-    sector automotriz.
-  </p>
-  <ul>
-    <li><a href="/historia">Historia</a></li>
-    <li><a href="/mision">Misión</a></li>
-    <li><a href="/vision">Visión</a></li>
-  </ul>
-</section>
+---
+import CarIcon from "@/icons/CarIcon.astro";
+
+const footerRefs = [
+  { href: "/historia", label: "Historia" },
+  { href: "/mision", label: "Misión" },
+  { href: "/vision", label: "Visión" },
+];
+
+const year = new Date().getFullYear();
+---
+
+<footer>
+  <div class="container footer-inner">
+    <section id="nosotros-resumen" class="footer-about">
+      <h2>Sobre nosotros</h2>
+      <p>
+        Conoce nuestra trayectoria, propósito y proyección como proveedores del
+        sector automotriz.
+      </p>
+      <nav class="cluster">
+        {
+          footerRefs.map((link) => (
+            <a class="pill" href={link.href}>
+              {link.label}
+            </a>
+          ))
+        }
+      </nav>
+    </section>
+
+    <div class="footer-meta">
+      <p>
+        © {year} Proveedora Automotriz Laja-Bajío. Todos los derechos reservados.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  footer {
+    width: 100%;
+    border-top: 1px solid
+      color-mix(in srgb, var(--color-aztec-950) 15%, transparent);
+    margin-top: auto;
+  }
+
+  .footer-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.75rem;
+    padding-block: 2.5rem;
+  }
+
+  .footer-about {
+    text-align: center;
+    max-width: 40rem;
+  }
+
+  .footer-about h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1.1rem;
+    color: var(--color-aztec-950);
+    letter-spacing: -0.01em;
+  }
+
+  .footer-about p {
+    margin: 0 0 1rem;
+    font-size: 0.85rem;
+    color: color-mix(in srgb, var(--color-aztec-950) 65%, transparent);
+  }
+
+  .footer-meta {
+    text-align: center;
+  }
+
+  .footer-meta p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: color-mix(in srgb, var(--color-aztec-950) 60%, transparent);
+  }
+</style>
