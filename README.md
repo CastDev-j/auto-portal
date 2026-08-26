@@ -18,6 +18,8 @@ pnpm install
 Modo desarrollo:
 
 ```bash
+pnpm run types
+
 pnpm dev
 ```
 
