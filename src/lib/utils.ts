@@ -11,3 +11,15 @@ import { twMerge } from "tailwind-merge";
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
+
+/**
+ * @description Returns a debounced version of `fn` that delays its execution
+ * until `delay` ms have elapsed since the last call.
+ */
+export function debounce<T extends unknown[]>(fn: (...args: T) => void, delay: number) {
+  let timeout: ReturnType<typeof setTimeout> | undefined;
+  return (...args: T) => {
+    if (timeout) clearTimeout(timeout);
+    timeout = setTimeout(() => fn(...args), delay);
+  };
+}

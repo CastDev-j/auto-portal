@@ -1,3 +1,22 @@
+---
+import Carousel from "@/components/shared/Carousel";
+
+const heroSlides = [
+  {
+    nombre: "Componentes Automotrices",
+    alt: "Componentes e insumos para la industria automotriz",
+  },
+  {
+    nombre: "Calidad Certificada",
+    alt: "Procesos de calidad certificados para la industria automotriz",
+  },
+  {
+    nombre: "Cobertura Laja-Bajío",
+    alt: "Cobertura regional en el corredor Celaya–Apaseo el Grande",
+  },
+];
+---
+
 <main>
   <section id="propuesta">
     <h1>Componentes e insumos para la industria automotriz</h1>
@@ -11,6 +30,10 @@
       documental en cada entrega, apoyando la continuidad de la línea de
       ensamble de nuestros clientes en el corredor Celaya–Apaseo el Grande.
     </p>
+  </section>
+
+  <section id="hero">
+    <Carousel client:load items={heroSlides} />
   </section>
 
   <section id="perfil">

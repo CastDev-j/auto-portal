@@ -4,7 +4,7 @@ import { ClientRouter } from "astro:transitions";
 import { Font } from "astro:assets";
 import { cn } from "@/lib/utils";
 import Footer from "@/components/shared/Footer.astro";
-import Navbar from "@/components/shared/Navbar.astro";
+import Navbar from "@/components/shared/Navbar";
 
 interface Props {
   title?: string;
@@ -27,7 +27,7 @@ const { title, class: className } = Astro.props;
     <title>{title || "Proveedora Automotriz Laja-Bajío"}</title>
   </head>
   <body class={cn("min-h-dvh w-full flex flex-col items-center", className)}>
-    <Navbar />
+    <Navbar client:load />
     <slot />
     <Footer />
   </body>

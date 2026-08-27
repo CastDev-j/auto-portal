@@ -21,7 +21,7 @@
     }
 
     body {
-        @apply w-full min-h-dvh flex text-aztec-950 leading-[1.6] max-w-4xl mx-auto;
+        @apply w-full min-h-dvh flex text-aztec-950 leading-[1.6] max-w-5xl mx-auto;
     }
 
     main {
@@ -126,15 +126,6 @@
         @apply outline-none border-aztec-500;
         box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-aztec-500) 25%, transparent);
     }
-
-    button {
-        @apply cursor-pointer rounded-full px-5 py-2 text-aztec-50 bg-aztec-500 border border-aztec-500 transition-colors duration-200;
-        font: inherit;
-    }
-
-    button:hover {
-        @apply bg-aztec-600 border-aztec-600;
-    }
 }
 
 @layer components {
@@ -160,5 +151,14 @@
 
     .field label {
         @apply text-sm font-medium text-aztec-950;
+    }
+
+    .button {
+        @apply cursor-pointer rounded-full px-5 py-2 text-aztec-50 bg-aztec-500 border border-aztec-500 transition-colors duration-200;
+        font: inherit;
+    }
+
+    .button:hover {
+        @apply bg-aztec-600 border-aztec-600;
     }
 }
