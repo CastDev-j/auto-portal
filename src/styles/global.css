@@ -16,73 +16,42 @@
 
 @layer base {
     html {
+        @apply scroll-smooth;
         font-family: var(--font-roboto);
-        scroll-behavior: smooth;
     }
 
     body {
-        width: 100%;
-        min-height: 100dvh;
-        display: flex;
-        background: var(--color-aztec-50);
-        color: var(--color-aztec-950);
-        line-height: 1.6;
-        max-width: 64rem;
-        margin: auto;
+        @apply w-full min-h-dvh flex text-aztec-950 leading-[1.6] max-w-4xl mx-auto;
     }
 
     main {
-        display: flex;
-        flex: 1;
-        flex-direction: column;
-        gap: 1.5rem;
-        padding: 2rem 1.5rem;
+        @apply flex-1 flex flex-col gap-6 px-6 py-8;
     }
 
-    main > article {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-
-    main > section + section {
-        margin-top: 0;
+    main>article {
+        @apply flex flex-col gap-6;
     }
 
     main h1 {
-        font-size: 2rem;
+        @apply text-2xl;
     }
 
     main h2 {
-        position: relative;
-        padding-bottom: 0.5rem;
-        margin-bottom: 1rem;
+        @apply relative pb-2 mb-4;
     }
 
     main h2::after {
         content: "";
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 2.5rem;
-        height: 3px;
-        border-radius: 999px;
-        background: var(--color-aztec-500);
+        @apply absolute left-0 bottom-0 w-10 h-0.75 rounded-full bg-aztec-500;
     }
 
     blockquote {
-        margin: 0 0 1rem;
-        padding: 1rem 1.25rem;
-        border-left: 4px solid var(--color-aztec-500);
-        border-radius: 0 0.75rem 0.75rem 0;
-        background: color-mix(in srgb, var(--color-aztec-100) 45%, transparent);
-        color: color-mix(in srgb, var(--color-aztec-950) 90%, transparent);
-        font-style: italic;
+        @apply m-0 mb-4 p-4 pl-5 border-l-4 border-aztec-500 rounded-tr-xl rounded-br-xl bg-aztec-100/45 text-aztec-950/90 italic;
     }
 
     ul li::marker,
     ol li::marker {
-        color: var(--color-aztec-500);
+        @apply text-aztec-500;
     }
 
     h1,
@@ -91,147 +60,105 @@
     h4,
     h5,
     h6 {
-        color: var(--color-aztec-950);
-        font-weight: 700;
-        line-height: 1.2;
-        letter-spacing: -0.02em;
-        margin: 0 0 0.75rem;
+        @apply font-bold leading-tight tracking-tight text-aztec-950 mb-3;
     }
 
     h1 {
-        font-size: 1.875rem;
+        @apply text-3xl;
     }
 
     h2 {
-        font-size: 1.5rem;
+        @apply text-2xl;
     }
 
     h3 {
-        font-size: 1.2rem;
+        @apply text-[1.2rem];
     }
 
     h4 {
-        font-size: 1rem;
+        @apply text-base;
     }
 
     h5 {
-        font-size: 0.95rem;
+        @apply text-[0.95rem];
     }
 
     h6 {
-        font-size: 0.85rem;
+        @apply text-[0.85rem];
     }
 
     p {
-        margin: 0 0 1rem;
-        color: color-mix(in srgb, var(--color-aztec-950) 85%, transparent);
+        @apply m-0 mb-4 text-aztec-950/85;
     }
 
     a {
-        color: var(--color-aztec-600);
-        transition: color 0.2s ease;
+        @apply text-aztec-600 transition-colors duration-200;
     }
 
     a:hover {
-        color: var(--color-aztec-500);
+        @apply text-aztec-500;
     }
 
     ul,
     ol {
-        margin: 0 0 1rem;
-        padding-inline-start: 1.25rem;
+        @apply m-0 mb-4 ps-5;
     }
 
     li {
-        margin-block: 0.25rem;
+        @apply my-1;
     }
 
     small {
-        font-size: 0.8rem;
-        color: color-mix(in srgb, var(--color-aztec-950) 60%, transparent);
-    }
-}
-
-@layer components {
-    .container {
-        width: 100%;
-        max-width: 1200px;
-        margin-inline: auto;
-        padding-inline: 1.5rem;
-    }
-
-    .cluster {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 0.75rem;
-        margin: 0;
-        padding: 0;
-        list-style: none;
-    }
-
-    .pill {
-        display: inline-block;
-        color: var(--color-aztec-950);
-        text-decoration: none;
-        font-size: 0.85rem;
-        padding: 0.4rem 0.85rem;
-        border-radius: 999px;
-        border: 1px solid color-mix(in srgb, var(--color-aztec-950) 15%, transparent);
-        transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
-    }
-
-    .pill:hover {
-        color: var(--color-aztec-50);
-        background: var(--color-aztec-500);
-        border-color: var(--color-aztec-500);
-    }
-
-    .field {
-        display: flex;
-        flex-direction: column;
-        gap: 0.35rem;
-        margin-bottom: 1rem;
-    }
-
-    .field label {
-        font-size: 0.85rem;
-        font-weight: 500;
-        color: var(--color-aztec-950);
+        @apply text-xs text-aztec-950/60;
     }
 
     input,
     textarea {
-        width: 100%;
+        @apply w-full rounded-[0.6rem] p-[0.6rem_0.8rem] border border-aztec-950/20;
         font: inherit;
         color: var(--color-aztec-950);
         background: color-mix(in srgb, var(--color-aztec-50) 70%, white);
-        border: 1px solid color-mix(in srgb, var(--color-aztec-950) 20%, transparent);
-        border-radius: 0.6rem;
-        padding: 0.6rem 0.8rem;
         transition: border-color 0.2s ease, box-shadow 0.2s ease;
     }
 
     input:focus,
     textarea:focus {
-        outline: none;
-        border-color: var(--color-aztec-500);
+        @apply outline-none border-aztec-500;
         box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-aztec-500) 25%, transparent);
     }
 
     button {
+        @apply cursor-pointer rounded-full px-5 py-2 text-aztec-50 bg-aztec-500 border border-aztec-500 transition-colors duration-200;
         font: inherit;
-        cursor: pointer;
-        color: var(--color-aztec-50);
-        background: var(--color-aztec-500);
-        border: 1px solid var(--color-aztec-500);
-        border-radius: 999px;
-        padding: 0.55rem 1.25rem;
-        transition: background 0.2s ease, color 0.2s ease;
     }
 
     button:hover {
-        background: var(--color-aztec-600);
-        border-color: var(--color-aztec-600);
+        @apply bg-aztec-600 border-aztec-600;
+    }
+}
+
+@layer components {
+    .container {
+        @apply w-full max-w-300 mx-auto px-6;
+    }
+
+    .cluster {
+        @apply flex flex-wrap justify-center gap-3 m-0 p-0 list-none;
+    }
+
+    .pill {
+        @apply inline-block text-aztec-950 no-underline text-sm px-3.5 py-1.5 rounded-full border border-aztec-950/15 transition-colors duration-200;
+    }
+
+    .pill:hover {
+        @apply text-aztec-50 bg-aztec-500 border-aztec-500;
+    }
+
+    .field {
+        @apply flex flex-col gap-1.5 mb-4;
+    }
+
+    .field label {
+        @apply text-sm font-medium text-aztec-950;
     }
 }
